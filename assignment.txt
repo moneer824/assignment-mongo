@@ -1,0 +1,323 @@
+///  assignment database  ///
+
+> use assignment
+switched to db assignment
+
+
+
+///  insertOne  ///
+
+> db.users.insertOne({        
+...     "first_name": "Kathe",
+...     "last_name": "Tansey",
+...     "email": "ktansey0@usa.gov",
+...     "gender": "Agender",
+...     "ip_address": "129.151.234.101",
+...     "age": 69
+... })
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61a2110144aab950d4975f21")
+}
+
+
+
+///  insertMany  ///
+
+> db.users.insertMany([{
+...     "first_name": "Dareen",
+...     "last_name": "Kahan",
+...     "email": "dkahan1@tuttocitta.it",
+...     "gender": "Genderfluid",
+...     "ip_address": "38.66.4.186",
+...     "age": 3
+...   }, {
+...     "first_name": "Dawna",
+...     "last_name": "De Ortega",
+...     "email": "ddeortega2@linkedin.com",
+...     "gender": "Bigender",
+...     "ip_address": "230.113.219.14",
+...     "age": 30
+...   }, {
+...     "first_name": "Decca",
+...     "last_name": "Uwins",
+...     "email": "duwins3@over-blog.com",
+...     "gender": "Female",
+...     "ip_address": "139.137.61.194",
+...     "age": 61
+...   }, {
+...     "first_name": "Grace",
+...     "last_name": "Macquire",
+...     "email": "gmacquire4@wp.com",
+...     "gender": "Bigender",
+...     "ip_address": "237.108.28.15",
+...     "age": 16
+...   }, {
+...     "first_name": "Jonathon",
+...     "last_name": "Meade",
+...     "email": "jmeade5@exblog.jp",
+...     "gender": "Male",
+...     "ip_address": "159.80.202.229",
+...     "age": 64
+...   }, {
+...     "first_name": "Chrisy",
+...     "last_name": "Halliday",
+...     "email": "challiday6@boston.com",
+...     "gender": "Genderfluid",
+...     "ip_address": "130.171.153.123",
+...     "age": 43
+...   }, {
+...     "first_name": "Scott",
+...     "last_name": "Uff",
+...     "email": "suff7@china.com.cn",
+...     "gender": "Genderqueer",
+...     "ip_address": "226.137.148.5",
+...     "age": 36
+...   }, {
+...     "first_name": "August",
+...     "last_name": "Proschke",
+...     "email": "aproschke8@ft.com",
+...     "gender": "Non-binary",
+...     "ip_address": "251.177.25.181",
+...     "age": 13
+...   }, {
+...     "first_name": "Charissa",
+...     "last_name": "Tresvina",
+...     "email": "ctresvina9@163.com",
+...     "gender": "Genderfluid",
+...     "ip_address": "84.215.72.54",
+...     "age": 51
+...   }]
+...   )
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("61a2116544aab950d4975f22"),
+                ObjectId("61a2116544aab950d4975f23"),
+                ObjectId("61a2116544aab950d4975f24"),
+                ObjectId("61a2116544aab950d4975f25"),
+                ObjectId("61a2116544aab950d4975f26"),
+                ObjectId("61a2116544aab950d4975f27"),
+                ObjectId("61a2116544aab950d4975f28"),
+                ObjectId("61a2116544aab950d4975f29"),
+                ObjectId("61a2116544aab950d4975f2a")
+        ]
+}
+
+
+
+///  findOne  ///
+
+
+> db.users.findOne({ "_id": ObjectId("61a2116544aab950d4975f22")})
+{
+        "_id" : ObjectId("61a2116544aab950d4975f22"),
+        "first_name" : "Dareen",
+        "last_name" : "Kahan",
+        "email" : "dkahan1@tuttocitta.it",
+        "gender" : "Genderfluid",
+        "ip_address" : "38.66.4.186",
+        "age" : 3
+}
+
+
+
+///  findMany  ///
+
+
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("61a2110144aab950d4975f21"),
+        "first_name" : "Kathe",
+        "last_name" : "Tansey",
+        "email" : "ktansey0@usa.gov",
+        "gender" : "Agender",
+        "ip_address" : "129.151.234.101",
+        "age" : 69
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f22"),
+        "first_name" : "Dareen",
+        "last_name" : "Kahan",
+        "email" : "dkahan1@tuttocitta.it",
+        "gender" : "Genderfluid",
+        "ip_address" : "38.66.4.186",
+        "age" : 3
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f23"),
+        "first_name" : "Dawna",
+        "last_name" : "De Ortega",
+        "email" : "ddeortega2@linkedin.com",
+        "gender" : "Bigender",
+        "ip_address" : "230.113.219.14",
+        "age" : 30
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f24"),
+        "first_name" : "Decca",
+        "last_name" : "Uwins",
+        "email" : "duwins3@over-blog.com",
+        "gender" : "Female",
+        "ip_address" : "139.137.61.194",
+        "age" : 61
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f25"),
+        "first_name" : "Grace",
+        "last_name" : "Macquire",
+        "email" : "gmacquire4@wp.com",
+        "gender" : "Bigender",
+        "ip_address" : "237.108.28.15",
+        "age" : 16
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f26"),
+        "first_name" : "Jonathon",
+        "last_name" : "Meade",
+        "email" : "jmeade5@exblog.jp",
+        "gender" : "Male",
+        "ip_address" : "159.80.202.229",
+        "age" : 64
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f27"),
+        "first_name" : "Chrisy",
+        "last_name" : "Halliday",
+        "email" : "challiday6@boston.com",
+        "gender" : "Genderfluid",
+        "ip_address" : "130.171.153.123",
+        "age" : 43
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f28"),
+        "first_name" : "Scott",
+        "last_name" : "Uff",
+        "email" : "suff7@china.com.cn",
+        "gender" : "Genderqueer",
+        "ip_address" : "226.137.148.5",
+        "age" : 36
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f29"),
+        "first_name" : "August",
+        "last_name" : "Proschke",
+        "email" : "aproschke8@ft.com",
+        "gender" : "Non-binary",
+        "ip_address" : "251.177.25.181",
+        "age" : 13
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f2a"),
+        "first_name" : "Charissa",
+        "last_name" : "Tresvina",
+        "email" : "ctresvina9@163.com",
+        "gender" : "Genderfluid",
+        "ip_address" : "84.215.72.54",
+        "age" : 51
+}
+
+
+
+
+///  updateOne  ///
+
+> db.users.updateOne({ "_id": ObjectId("61a2116544aab950d4975f22") }, { $set: { first_name: "Dhawal", last_name: "Chheda" }})
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+
+> db.users.findOne({ "_id": ObjectId("61a2116544aab950d4975f22") })
+{
+        "_id" : ObjectId("61a2116544aab950d4975f22"),
+        "first_name" : "Dhawal",
+        "last_name" : "Chheda",
+        "email" : "dkahan1@tuttocitta.it",
+        "gender" : "Genderfluid",
+        "ip_address" : "38.66.4.186",
+        "age" : 3
+}
+
+
+
+///  updateMany  ///
+
+
+> db.users.updateMany({ gender: "Genderfluid" }, { $set: { gender: "Male"}})
+{ "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 3 }
+> 
+
+
+///  remove  ///
+
+
+> db.users.remove({ "_id" : ObjectId("61a2116544aab950d4975f2a") })
+WriteResult({ "nRemoved" : 1 })
+
+
+
+///  deleteOne  ///
+
+
+> db.users.deleteOne({ "_id" : ObjectId("61a2116544aab950d4975f23")})
+{ "acknowledged" : true, "deletedCount" : 1 }
+>
+
+
+
+///  deleteMany  ///
+
+
+> db.users.deleteMany({ gender: "Male" })    
+{ "acknowledged" : true, "deletedCount" : 3 }
+>
+
+
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("61a2110144aab950d4975f21"),
+        "first_name" : "Kathe",
+        "last_name" : "Tansey",
+        "email" : "ktansey0@usa.gov",
+        "gender" : "Agender",
+        "ip_address" : "129.151.234.101",
+        "age" : 69
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f24"),
+        "first_name" : "Decca",
+        "last_name" : "Uwins",
+        "email" : "duwins3@over-blog.com",
+        "gender" : "Female",
+        "ip_address" : "139.137.61.194",
+        "age" : 61
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f28"),
+        "first_name" : "Scott",
+        "last_name" : "Uff",
+        "email" : "suff7@china.com.cn",
+        "gender" : "Genderqueer",
+        "ip_address" : "226.137.148.5",
+        "age" : 36
+}
+{
+        "_id" : ObjectId("61a2116544aab950d4975f29"),
+        "first_name" : "August",
+        "last_name" : "Proschke",
+        "email" : "aproschke8@ft.com",
+        "gender" : "Non-binary",
+        "ip_address" : "251.177.25.181",
+        "age" : 13
+}
+> 
+
+
+///  delete database  ///
+
+
+> db.dropDatabase()
+{ "ok" : 1 }
+> show dbs     
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+>
